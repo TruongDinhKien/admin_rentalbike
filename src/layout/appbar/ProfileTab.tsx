@@ -3,12 +3,13 @@ import { useTheme } from '@mui/material/styles'
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
-import { ShowButton, useRedirect } from 'react-admin'
+import { ShowButton, useGetIdentity, useRedirect } from 'react-admin'
 import { Params, useParams } from 'react-router-dom'
 import { dataProvider } from '@/provider'
 import * as api from '@/apis'
 
 export const ProfileTab: FC<any> = ({ handleLogout }) => {
+  const { identity } = useGetIdentity()
   const theme = useTheme()
   const redirect = useRedirect()
   const params: any = useParams()
@@ -45,7 +46,7 @@ export const ProfileTab: FC<any> = ({ handleLogout }) => {
 
   // eslint-disable-next-line no-unused-vars
   const directUserProfile = (params: any) => {
-    redirect(`users/${params.id}/show`)
+    identity?.id && redirect(`users/${identity.id}/edit`)
   }
 
   return (

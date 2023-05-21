@@ -45,8 +45,10 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </CustomRoutes>
+
+      <Resource name="users" edit={UserDetail} />
       <Resource name="bikes" list={BikeList} />
-      <Resource name="users" show={UserDetail} />
+      {/* <Resource name="profiles" list={UserDetail} /> */}
       <Resource name="skinguns" list={SkinGunList} create={SkinGunCreate} show={SkinGunDetail} edit={SkinGunEdit} />
     </Admin>
   )
