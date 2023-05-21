@@ -3,13 +3,25 @@ import { Avatar, Box, Button, Card, CardContent, Container, Grid, Link, Typograp
 import { Form, TextInput, useLogin, useNotify } from 'react-admin'
 import { Copyright } from '../components'
 import { style } from './style'
+import { useState } from 'react'
 
 export const SignIn = () => {
   const login = useLogin()
   const notify = useNotify()
+  const [loading, setLoading] = useState(false)
 
   const handleSubmit = (data: any) => {
-    login(data).catch(() => notify('Username or Password is invalid , Try again!!!'))
+    setLoading(true)
+    const { email, password } = data
+    const loginRQ = {
+      email,
+      password,
+    }
+
+    login(loginRQ).catch((err: Error) => {
+      setLoading(true)
+      notify('Username or Password is invalid , Try again!!!')
+    })
   }
 
   return (
@@ -27,12 +39,12 @@ export const SignIn = () => {
           <Box component="div" sx={{ mt: 1 }}>
             <Form onSubmit={handleSubmit}>
               <TextInput
-                source="username"
+                source="email"
                 margin="dense"
                 required
                 fullWidth
-                label="Username"
-                autoComplete="username"
+                label="Email"
+                autoComplete="Email"
                 autoFocus
                 size="medium"
               />

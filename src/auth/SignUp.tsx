@@ -1,36 +1,39 @@
 import * as api from '@/apis'
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import { Avatar, Box, Button, Card, CardContent, Container, Grid, Link, Typography } from '@mui/material'
-import { Form, TextInput, useRedirect } from 'react-admin'
+import { Form, TextInput, useNotify, useRedirect } from 'react-admin'
 import { Copyright } from '../components'
 import { style } from './style'
 
 export const SignUp = () => {
   const redirect = useRedirect()
-
+  const notify = useNotify()
   const handleSubmit = async (data: any) => {
-    const phonenumber = await data.phonenumber
-    const password = await data.password
-    // const username = await data.username
     const email = await data.email
     const firstName = await data.firstName
     const lastName = await data.lastName
+    const phonenumber = await data.phoneNumber
+    const password = await data.password
 
-    if (password.length < 6) {
-      alert('Password must be larger than 6')
-    } else if (phonenumber.length !== 10) {
-      alert('Phone number must be 10')
-    } else if (firstName == '' || lastName == '') {
-      alert('Username is invalid , try again')
-    } else if (email == '') {
-      alert('Email is invalid')
-    } else {
-      const rs = await api.signUp(data)
-      console.log('ket qua', rs)
-      // if (rs) {
-      //   redirect('/signin')
-      // }
+    const rs = await api.signUp(data)
+    if (rs) {
+      notify('Đăng ký tài khoản thành công')
+      redirect('/login')
     }
+    // if (password.length < 6) {
+    //   alert('Password must be larger than 6')
+    // } else if (phonenumber.length !== 10) {
+    //   alert('Phone number must be 10')
+    // } else if (firstName === '' || lastName === '') {
+    //   alert('Username is invalid , try again')
+    // } else if (email === '') {
+    //   alert('Email is invalid')
+    // } else {
+    //   const rs = await api.signUp(data)
+    //   if (rs) {
+    //     redirect('/signin')
+    //   }
+    // }
   }
 
   return (
@@ -64,11 +67,11 @@ export const SignUp = () => {
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                 Sign Up
               </Button>
-            </Form>
+          </Form>
 
             <Grid container justifyContent="center">
               <Grid item>
-                <Link href="/signin" variant="body2">
+                <Link href="/login" variant="body2">
                   {'Back to login'}
                 </Link>
               </Grid>

@@ -55,7 +55,7 @@ export const Profile = () => {
   const redirect = useRedirect()
 
   const handleLogout = async () => {
-    redirect('/signin')
+    redirect('/login')
   }
 
   const anchorRef: any = useRef(null)
