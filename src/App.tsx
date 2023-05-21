@@ -11,7 +11,7 @@ import { ResetPassword } from './forgetpassword/ResetPassword'
 import vietnamMessages from './i18n/vi'
 import englishMessages from './i18n/en'
 import { MainLayout } from './layout/Layout'
-import { dataProvider } from './provider'
+import { authProvider, dataProvider } from './provider'
 import { SkinGunCreate, SkinGunDetail, SkinGunList } from './skinguns'
 import { SkinGunEdit } from './skinguns/SkinGunEdit'
 import { lightTheme } from './themes'
@@ -30,16 +30,17 @@ const i18nProvider = polyglotI18nProvider(locale => {
 const App = () => {
   return (
     <Admin
-      title="Nexbus Admin"
+      authProvider={authProvider}
+      title="Rentalbike admin"
       dashboard={Dashboard}
       history={history}
       dataProvider={dataProvider}
+      loginPage={SignIn}
       layout={MainLayout}
       theme={lightTheme}
       i18nProvider={i18nProvider}
     >
       <CustomRoutes noLayout>
-        <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
