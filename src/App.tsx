@@ -16,7 +16,7 @@ import { SkinGunCreate, SkinGunDetail, SkinGunList } from './skinguns'
 import { SkinGunEdit } from './skinguns/SkinGunEdit'
 import { lightTheme } from './themes'
 import { UserDetail } from './users'
-import { BikeList } from './pages/bike'
+import { BikeList } from './pages/bikes'
 
 const history = createBrowserHistory()
 

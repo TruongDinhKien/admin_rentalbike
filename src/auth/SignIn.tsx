@@ -4,11 +4,14 @@ import { Form, TextInput, useLogin, useNotify } from 'react-admin'
 import { Copyright } from '../components'
 import { style } from './style'
 import { useState } from 'react'
+import VisibilityIcon from '@mui/icons-material/Visibility'
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 
 export const SignIn = () => {
   const login = useLogin()
   const notify = useNotify()
   const [loading, setLoading] = useState(false)
+  const [showPasswd, setShowPasswd] = useState(false)
 
   const handleSubmit = (data: any) => {
     setLoading(true)
@@ -54,9 +57,23 @@ export const SignIn = () => {
                 required
                 fullWidth
                 label="Password"
-                type="password"
+                type={showPasswd ? 'text' : 'password'}
                 autoComplete="current-password"
                 size="medium"
+                InputProps={{
+                  endAdornment: showPasswd ? (
+                    <VisibilityIcon
+                      color="primary"
+                      onClick={() => setShowPasswd(!showPasswd)}
+                      sx={{ cursor: 'pointer', width: '5%', justifyItems: 'center', marginLeft: '10px' }}
+                    />
+                  ) : (
+                    <VisibilityOffIcon
+                      onClick={() => setShowPasswd(!showPasswd)}
+                      sx={{ cursor: 'pointer', width: '5%', justifyItems: 'center', marginLeft: '10px' }}
+                    />
+                  ),
+                }}
               />
               <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
                 Login

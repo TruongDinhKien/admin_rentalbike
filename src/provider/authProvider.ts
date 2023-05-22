@@ -41,7 +41,7 @@ const getPermissions = (params: any) => {
 
 const getIdentity = () => {
   const user = storage.load('auth')
-  console.log('check user --->', user)
+  // console.log('check user --->', user)
   const identity = {
     id: user.id,
     email: user.email,

@@ -4,7 +4,7 @@ export const Logo = () => {
   return (
     <ButtonBase>
       <Typography variant="h2" color="primary">
-        Bye bye store
+        Bike Rental
       </Typography>
     </ButtonBase>
   )
