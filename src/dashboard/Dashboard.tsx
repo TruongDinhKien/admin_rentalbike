@@ -9,7 +9,7 @@ export const Dashboard = () => (
     <Title title="Welcome to the administration" />
     <CardContent>
       <Box>
-        <Grid style={{ textAlign: 'center', color: 'gray', fontWeight: 'bold' }}>Welcome to Alime Store</Grid>
+        <Grid style={{ textAlign: 'center', color: 'gray', fontWeight: 'bold' }}>Welcome to Bike Store</Grid>
       </Box>
     </CardContent>
   </Card>

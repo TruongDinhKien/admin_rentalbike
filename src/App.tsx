@@ -16,7 +16,8 @@ import { SkinGunCreate, SkinGunDetail, SkinGunList } from './skinguns'
 import { SkinGunEdit } from './skinguns/SkinGunEdit'
 import { lightTheme } from './themes'
 import { UserDetail } from './users'
-import { BikeList } from './pages/bike'
+import { BikeList, BikeCreate, BikeEdit } from './pages/bikes'
+import { RentalList } from './pages/rental'
 
 const history = createBrowserHistory()
 
@@ -31,10 +32,10 @@ const App = () => {
   return (
     <Admin
       authProvider={authProvider}
+      dataProvider={dataProvider}
       title="Rentalbike admin"
       dashboard={Dashboard}
       history={history}
-      dataProvider={dataProvider}
       loginPage={SignIn}
       layout={MainLayout}
       theme={lightTheme}
@@ -45,11 +46,9 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </CustomRoutes>
-
       <Resource name="users" edit={UserDetail} />
-      <Resource name="bikes" list={BikeList} />
-      {/* <Resource name="profiles" list={UserDetail} /> */}
-      <Resource name="skinguns" list={SkinGunList} create={SkinGunCreate} show={SkinGunDetail} edit={SkinGunEdit} />
+      <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
+      <Resource name="rentals" list={RentalList} />
     </Admin>
   )
 }
