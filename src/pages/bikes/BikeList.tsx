@@ -1,26 +1,16 @@
-import { Datagrid, FunctionField, List, NumberField, TextField } from 'react-admin'
+import { Datagrid, DeleteButton, EditButton, List, TextField } from 'react-admin'
+
+const actionButton = () => {}
 
 export const BikeList = () => {
   return (
-    <div>
-      <List>
-        <Datagrid>
-          <NumberField source="id" />
-          <TextField source="name" />
-          <TextField source="description" />
-          {/* <FunctionField
-            source="imgUrl"
-            label="Image"
-            render={(record: any) =>
-              record.assets.map((url: any) => {
-                return <img style={{ height: '125px', width: '125px', borderRadius: '50%' }} src={url} />
-              })
-            }
-          /> */}
-          {/* <EditButton />
-          <DeleteButton /> */}
-        </Datagrid>
-      </List>
-    </div>
+    <List bulkActionButtons={false}>
+      <Datagrid>
+        <TextField source="name" />
+        <TextField source="description" />
+        <EditButton />
+        <DeleteButton />
+      </Datagrid>
+    </List>
   )
 }

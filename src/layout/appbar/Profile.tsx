@@ -19,7 +19,6 @@ import { MainCard, Transitions } from '@/components'
 import { ProfileTab } from './ProfileTab'
 import { SettingTab } from './SettingTab'
 import LogoutIcon from '@mui/icons-material/Logout'
-import SettingsIcon from '@mui/icons-material/Settings'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { useDataProvider, useGetIdentity, useLogout, useRedirect, useTranslate } from 'react-admin'
 import { green } from '@mui/material/colors'
@@ -77,8 +76,7 @@ export const Profile = () => {
     // setValue(newValue)
     console.log('test')
   }
-  const { identity, isLoading: identityLoading } = useGetIdentity()
-  // console.log('check identy ty', identity)
+  const { identity } = useGetIdentity()
 
   const iconBackColorOpen = 'grey.300'
   const avatar = 'https://i1.sndcdn.com/artworks-000435379884-wpolr3-t240x240.jpg'
@@ -144,18 +142,13 @@ export const Profile = () => {
                            *<Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
                            */}
                           <Stack>
-                            <Typography variant="h6">MSSV: {identity?.id}</Typography>
                             <Typography variant="body2" color="textSecondary">
-                              Hi, {identity?.username}
+                              Hi, {identity?.fullName}
                             </Typography>
                           </Stack>
                         </Stack>
                       </Grid>
-                      <Grid item>
-                        <IconButton size="large" color="secondary" onClick={handleLogout}>
-                          <LogoutIcon />
-                        </IconButton>
-                      </Grid>
+                     
                     </Grid>
                   </CardContent>
                   {open && (

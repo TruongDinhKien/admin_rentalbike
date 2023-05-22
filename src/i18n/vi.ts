@@ -7,6 +7,14 @@ const customVietnameseMessages: TranslationMessages = {
     posts: 'Bài viết',
   },
   ra: {
+    page: {
+      edit:  "Chỉnh sửa"
+    }
+    ,
+    notification: {
+      item_doesnt_exist: "Dữ liệu không tồn tại"
+    }
+    ,
     input: {
       image: {
         upload_single: 'Chọn ảnh',

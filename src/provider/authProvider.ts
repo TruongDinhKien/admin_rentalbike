@@ -45,6 +45,7 @@ const getIdentity = () => {
   const identity = {
     id: user.id,
     email: user.email,
+    fullName: user?.firstName + ' ' + user?.lastName,
   }
   return Promise.resolve(identity)
 }
