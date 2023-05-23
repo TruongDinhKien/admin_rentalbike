@@ -1,14 +1,6 @@
-import { Create, ListButton, SimpleForm, TextInput, TopToolbar, required } from 'react-admin'
+import { ActionButton } from '@/components'
+import { Create, SimpleForm, TextInput, required } from 'react-admin'
 
-const ActionButton = () => {
-  return (
-    <div>
-      <TopToolbar>
-        <ListButton />
-      </TopToolbar>
-    </div>
-  )
-}
 export const BikeCreate = () => {
   const choices = [
     { id: '0', name: 'online' },

@@ -1,10 +1,10 @@
 import { ActionButton } from '@/components'
 import _ from 'lodash'
-import {  Edit, SimpleForm, TextInput, required } from 'react-admin'
+import { Edit, SimpleForm, TextInput, required } from 'react-admin'
 
-export const BikeEdit = () => {
+export const UserEdit = () => {
   const transformData = (data: any) => {
-    let value = _.omit(data, ['id', 'imgUrl', 'bikestatusId'])
+    let value = _.omit(data, ['id'])
     value = _.omitBy(value, val => val === null)
     value = { ...value }
     return value

@@ -26,6 +26,22 @@ export const items: MenuItemProps[] = [
     url: '/',
     icon: DashboardOutlined,
     breadcrumbs: true,
+  }, {
+    id: 'users',
+    title: 'Users',
+    type: 'collapse',
+    icon: GridViewIcon,
+    breadcrumbs: true,
+    children: [
+      {
+        id: 'users/list',
+        title: 'User list',
+        type: 'item',
+        icon: ListIcon,
+        url: '/Users',
+        breadcrumbs: true,
+      },
+    ],
   },
   {
     id: 'bikes',
