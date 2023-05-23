@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles'
 import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import { MenuItemProps } from './items'
-import { useSidebarState, useStore } from 'react-admin'
+import { useSidebarState, useStore, useTranslate } from 'react-admin'
 import { MENU_ICON_SELECTED_COLOR, MENU_TEXT_COLOR } from '@/constants'
 import _ from 'lodash'
 
@@ -16,6 +16,7 @@ type NavItemProps = {
 export const NavItem: FC<NavItemProps> = ({ item, level = 1, parent }) => {
   const [drawerOpen] = useSidebarState()
   const location = useLocation()
+  const translate = useTranslate()
 
   const [menu, setMenu] = useStore('menu')
 
@@ -142,7 +143,7 @@ export const NavItem: FC<NavItemProps> = ({ item, level = 1, parent }) => {
                 color: isSelected ? MENU_ICON_SELECTED_COLOR : MENU_TEXT_COLOR,
               }}
             >
-              {item.title}
+              {translate(`menu.${item.title}`)}
             </Typography>
           }
         />

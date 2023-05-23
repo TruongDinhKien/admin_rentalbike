@@ -5,6 +5,7 @@ import { Grid, Typography } from '@mui/material'
 import { MainCard } from './MainCard'
 import { MenuItemProps } from '../layout/menu/items'
 import _ from 'lodash'
+import { useTranslate } from 'react-admin'
 
 type BreadcrumbsProps = {
   navigation: MenuItemProps[]
@@ -16,6 +17,7 @@ type BreadcrumbsProps = {
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({ navigation, title }) => {
   const location = useLocation()
+  const translate = useTranslate()
   const [main, setMain] = useState<MenuItemProps>()
   const [item, setItem] = useState<MenuItemProps>()
 
@@ -90,14 +92,14 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ navigation, title }) => {
         sx={{ textDecoration: 'none' }}
         color="textSecondary"
       >
-        {main.title}
+        {translate(`menu.${main.title}`)}
       </Typography>
     )
   }
 
   // items
   if (item && item.type === 'item') {
-    itemTitle = item.title ?? ''
+    itemTitle = translate(`menu.${item.title}`)
     itemContent = (
       <Typography variant="subtitle1" color="textPrimary" sx={{ textTransform: 'capitalize' }}>
         {itemTitle}
@@ -126,7 +128,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ navigation, title }) => {
             {title && (
               <Grid item sx={{ mt: 2 }}>
                 <Typography variant="h3" sx={{ textTransform: 'capitalize' }}>
-                  {item.title}
+                  {itemTitle}
                 </Typography>
               </Grid>
             )}
