@@ -1,12 +1,11 @@
-import { ActionButton } from '@/components'
-import { Create, NumberInput, SimpleForm, TextInput, required } from 'react-admin'
+import { BackToListBtn } from '@/components'
+import { Create, SimpleForm, TextInput, required } from 'react-admin'
 
 export const UserCreate = () => {
-
   return (
-    <Create actions={<ActionButton />}>
+    <Create actions={<BackToListBtn />}>
       <SimpleForm>
-        <TextInput source="email" validate={[required()]} label="Email"  />
+        <TextInput source="email" validate={[required()]} label="Email" />
         <TextInput source="phoneNumber" />
         <TextInput source="firstName" />
         <TextInput source="lastName" />

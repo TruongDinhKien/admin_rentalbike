@@ -1,6 +1,6 @@
 import { ActionButton } from '@/components'
 import _ from 'lodash'
-import { Edit, NumberInput, SimpleForm, TextInput, required } from 'react-admin'
+import { Edit, SimpleForm, TextInput, required } from 'react-admin'
 
 export const UserEdit = () => {
   const transformData = (data: any) => {
@@ -13,7 +13,7 @@ export const UserEdit = () => {
   return (
     <Edit transform={transformData} actions={<ActionButton />}>
       <SimpleForm>
-        <TextInput source="email" validate={required()}/>
+        <TextInput source="email" validate={required()} />
         <TextInput source="phoneNumber" />
         <TextInput source="firstName" />
         <TextInput source="lastName" />
