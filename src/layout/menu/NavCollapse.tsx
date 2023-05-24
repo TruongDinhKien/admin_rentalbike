@@ -1,7 +1,7 @@
 import { Fragment, FC, useEffect, useState } from 'react'
 import { Avatar, Chip, ListItemButton, ListItemIcon, ListItemText, Typography, List, Collapse } from '@mui/material'
 import { MenuItemProps } from './items'
-import { useSidebarState, useStore } from 'react-admin'
+import { useSidebarState, useStore, useTranslate } from 'react-admin'
 import { MENU_TEXT_COLOR, MENU_ICON_SELECTED_COLOR } from '@/constants'
 import ExpandLess from '@mui/icons-material/ExpandLess'
 import ExpandMore from '@mui/icons-material/ExpandMore'
@@ -16,7 +16,7 @@ type NavCollapseProps = {
 export const NavCollapse: FC<NavCollapseProps> = ({ item, level = 1 }) => {
   const [drawerOpen] = useSidebarState()
   const [open, setOpen] = useState(false)
-
+  const translate = useTranslate()
   const [menu] = useStore('menu')
 
   const itemHandler = () => {
@@ -84,7 +84,7 @@ export const NavCollapse: FC<NavCollapseProps> = ({ item, level = 1 }) => {
                   color: open ? MENU_ICON_SELECTED_COLOR : MENU_TEXT_COLOR,
                 }}
               >
-                {item.title}
+                {translate(`menu.${item.title}`)}
               </Typography>
             }
           />

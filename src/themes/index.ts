@@ -1,8 +1,9 @@
 import Palette from './palette'
 import componentsOverride from './overrides'
 import { blueGrey, purple } from '@mui/material/colors'
-import { createTheme, PaletteMode, ThemeOptions } from '@mui/material'
+import { createTheme, ThemeOptions } from '@mui/material/styles'
 import Typography from './typography'
+import { PaletteMode } from '@mui/material'
 
 const renderTheme = (mode: PaletteMode) => {
   const themeTypography: any = Typography([

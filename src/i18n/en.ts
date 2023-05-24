@@ -4,10 +4,30 @@ const englishMessages = require('ra-language-english')
 
 const customEnglishMessages: TranslationMessages = {
   ...englishMessages,
+  welcome: 'Welcome to bike store',
   menu: {
     posts: 'Posts',
+    edit: 'Edit',
+    user_management: 'User management',
+    bike_management: 'Bike management',
+    rental_management: 'Rental management',
+    rental_list: 'Rental List',
+    bike_list: 'Bike List',
+    user_list: 'User List',
+    dashboard: 'Dashboard',
+    en: 'English',
+    vi: 'Vietnamese',
   },
   ra: {
+    page: {
+      edit: 'Edit',
+      list: 'List',
+      empty: 'Empty',
+      invite: 'Invite',
+    },
+    notification: {
+      item_doesnt_exist: "Item does not exist"
+    },
     input: {
       image: {
         upload_single: 'Select image',

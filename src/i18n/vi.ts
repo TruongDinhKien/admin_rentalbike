@@ -3,12 +3,27 @@ import { TranslationMessages } from 'react-admin'
 const vietnameseMessages = require('ra-language-vietnamese')
 const customVietnameseMessages: TranslationMessages = {
   ...vietnameseMessages,
+  welcome: 'Chào mừng đến với trang quản lí xe',
   menu: {
+    welcome: 'Chào mừng đến với trang quản lí xe',
     posts: 'Bài viết',
+    edit: 'Chỉnh sửa',
+    user_management: 'Quản lí người dùng',
+    bike_management: 'Quản lí xe',
+    rental_management: 'Quản lí chpo thuê',
+    rental_list: 'Danh sách cho thuê',
+    bike_list: 'Danh sách xe',
+    user_list: 'Danh sách người dùng',
+    dashboard: 'Bảng điều khiển',
+    en: 'Tiếng Anh',
+    vi: 'Tiếng Việt'
   },
   ra: {
     page: {
-      edit:  "Chỉnh sửa"
+      edit:  "Chỉnh sửa",
+      list: "Danh sách",
+      empty: 'Trống',
+      invite: 'Mời'
     }
     ,
     notification: {

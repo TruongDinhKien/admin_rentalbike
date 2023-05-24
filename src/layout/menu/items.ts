@@ -21,7 +21,7 @@ export type MenuItemProps = {
 export const items: MenuItemProps[] = [
   {
     id: 'home',
-    title: 'Dashboard',
+    title: 'dashboard',
     type: 'item',
     url: '/',
     icon: DashboardOutlined,
@@ -29,14 +29,14 @@ export const items: MenuItemProps[] = [
   },
   {
     id: 'users',
-    title: 'Users',
+    title: 'user_management',
     type: 'collapse',
     icon: GridViewIcon,
     breadcrumbs: true,
     children: [
       {
         id: 'users/list',
-        title: 'User list',
+        title: 'user_list',
         type: 'item',
         icon: ListIcon,
         url: '/Users',
@@ -46,14 +46,14 @@ export const items: MenuItemProps[] = [
   },
   {
     id: 'bikes',
-    title: 'Bikes',
+    title: 'bike_management',
     type: 'collapse',
     icon: GridViewIcon,
     breadcrumbs: true,
     children: [
       {
         id: 'bikes/list',
-        title: 'Bike list',
+        title: 'bike_list',
         type: 'item',
         icon: ListIcon,
         url: '/bikes',
@@ -71,14 +71,14 @@ export const items: MenuItemProps[] = [
   },
   {
     id: 'rentals',
-    title: 'Rental',
+    title: 'rental_management',
     type: 'collapse',
     icon: GridViewIcon,
     breadcrumbs: true,
     children: [
       {
         id: 'rentals/list',
-        title: 'Rental list',
+        title: 'rental_list',
         type: 'item',
         icon: ListIcon,
         url: '/rentals',

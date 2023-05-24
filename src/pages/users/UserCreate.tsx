@@ -6,9 +6,10 @@ export const UserCreate = () => {
     <Create actions={<BackToListBtn />}>
       <SimpleForm>
         <TextInput source="email" validate={[required()]} label="Email" />
+        <TextInput source="phoneNumber" />
         <TextInput source="firstName" />
-        <TextInput source="firstName" />
-        <TextInput source="firstName" />
+        <TextInput source="lastName" />
+        {/* <NumberInput source="roleId" /> */}
       </SimpleForm>
     </Create>
   )
