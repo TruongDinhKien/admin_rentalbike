@@ -15,6 +15,7 @@ const customVietnameseMessages: TranslationMessages = {
     bike_list: 'Danh sách xe',
     user_list: 'Danh sách người dùng',
     dashboard: 'Bảng điều khiển',
+    Status: 'Trạng thái',
     en: 'Tiếng Anh',
     vi: 'Tiếng Việt'
   },

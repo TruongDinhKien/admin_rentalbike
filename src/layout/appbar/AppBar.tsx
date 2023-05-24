@@ -3,7 +3,7 @@ import { DRAWER_WIDTH } from '@/constants'
 import { useTheme } from '@mui/material/styles'
 import { AppBar, IconButton, Toolbar, useMediaQuery, styled } from '@mui/material'
 import { HeaderContent } from './HeaderContent'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ListIcon from '@mui/icons-material/List'
 import { LocalesMenuButton } from 'react-admin'
 
@@ -32,22 +32,20 @@ type HeaderProps = {
   iconBackColorOpen?: string
 }
 
-const MainHeader: FC<HeaderProps> = ({ open, handleDrawerToggle, iconBackColor, iconBackColorOpen }) => {
+const MainHeader: FC<HeaderProps> = ({ open, handleDrawerToggle}) => {
   return (
-    <Toolbar>
+    <Toolbar >
       <IconButton
         disableRipple
         aria-label="open drawer"
         onClick={handleDrawerToggle}
         edge="start"
-        color="secondary"
         sx={{
           color: 'text.primary',
-          bgcolor: open ? iconBackColorOpen : iconBackColor,
           ml: { xs: 0, lg: -2 },
         }}
       >
-        {!open ? <ListIcon /> : <ArrowForwardIosIcon />}
+        {!open ? <ListIcon /> : <ArrowBackIosIcon />}
       </IconButton>
       <HeaderContent />
     </Toolbar>
@@ -57,10 +55,6 @@ const MainHeader: FC<HeaderProps> = ({ open, handleDrawerToggle, iconBackColor, 
 export const Header: FC<HeaderProps> = ({ open, handleDrawerToggle }) => {
   const theme = useTheme()
   const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'))
-
-  const iconBackColor = 'grey.100'
-  const iconBackColorOpen = 'grey.200'
-
   // app-bar params
   const appBar: any = {
     position: 'fixed',
@@ -79,8 +73,6 @@ export const Header: FC<HeaderProps> = ({ open, handleDrawerToggle }) => {
           <MainHeader
             open={open}
             handleDrawerToggle={handleDrawerToggle}
-            iconBackColor={iconBackColor}
-            iconBackColorOpen={iconBackColorOpen}
           />
         </AppBarStyled>
       ) : (
@@ -88,8 +80,6 @@ export const Header: FC<HeaderProps> = ({ open, handleDrawerToggle }) => {
           <MainHeader
             open={open}
             handleDrawerToggle={handleDrawerToggle}
-            iconBackColor={iconBackColor}
-            iconBackColorOpen={iconBackColorOpen}
           />
         </AppBar>
       )}

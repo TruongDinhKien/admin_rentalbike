@@ -15,6 +15,7 @@ const customEnglishMessages: TranslationMessages = {
     bike_list: 'Bike List',
     user_list: 'User List',
     dashboard: 'Dashboard',
+    Status: 'Status',
     en: 'English',
     vi: 'Vietnamese',
   },

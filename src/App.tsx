@@ -13,8 +13,8 @@ import { MainLayout } from './layout/Layout'
 import { authProvider, dataProvider } from './provider'
 import { BikeList, BikeCreate, BikeEdit } from './pages/bikes'
 import { UserList, UserCreate, UserEdit } from './pages/users'
-import { RentalCreate, RentalList } from './pages/rental'
-import { BikeStatus, BikeStatusCreate } from './pages/status'
+import { RentalList } from './pages/rental'
+import { lightTheme } from './custom-themes'
 
 const translations: any = { en: englishMessages, vi: vietnamMessages }
 const history = createBrowserHistory()
@@ -40,6 +40,7 @@ const App = () => {
       loginPage={SignIn}
       layout={MainLayout}
       i18nProvider={i18nProvider}
+      theme={lightTheme}
     >
       <CustomRoutes noLayout>
         <Route path="/signup" element={<SignUp />} />
@@ -48,8 +49,7 @@ const App = () => {
       </CustomRoutes>
       <Resource name="users" edit={UserEdit} list={UserList} create={UserCreate} />
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
-      <Resource name="bikestatuses" list={BikeStatus} create={BikeStatusCreate} />
-      <Resource name="rentals" list={RentalList} create={RentalCreate} />
+      <Resource name="rentals" list={RentalList} />
     </Admin>
   )
 }

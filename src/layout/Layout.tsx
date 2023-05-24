@@ -1,7 +1,6 @@
 import { useEffect, FC } from 'react'
-import { Outlet } from 'react-router-dom'
 import { useTheme } from '@mui/material/styles'
-import { Box, Toolbar, useMediaQuery } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
 import { Header } from './appbar'
 import { Breadcrumbs } from '@/components'
 import { useSidebarState } from 'react-admin'
@@ -17,7 +16,7 @@ export const MainLayout: FC<any> = ({ children }) => {
     setOpen(!open)
   }
 
-  // set media wise responsive drawer
+  // set media-wise responsive drawer
   useEffect(() => {
     setOpen(!matchDownLG)
   }, [matchDownLG])
@@ -31,7 +30,7 @@ export const MainLayout: FC<any> = ({ children }) => {
         sx={{
           width: '100%',
           marginTop: '75px',
-          backgroundColor: '#fafafa',
+          backgroundColor: theme.palette.mode === 'dark' ? '#1a1a1a' : '#fafafa',
           flexGrow: 1,
           minHeight: 'calc(100vh - 110px)',
           p: { xs: 2, sm: 3 },
