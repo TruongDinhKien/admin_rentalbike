@@ -10,7 +10,7 @@ export const UserCreate = () => {
         <TextInput source="phoneNumber" />
         <TextInput source="firstName" />
         <TextInput source="lastName" />
-        <NumberInput source="roleId" />
+        {/* <NumberInput source="roleId" /> */}
       </SimpleForm>
     </Create>
   )
