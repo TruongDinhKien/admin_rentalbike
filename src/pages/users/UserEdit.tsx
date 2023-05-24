@@ -1,6 +1,6 @@
 import { ActionButton } from '@/components'
 import _ from 'lodash'
-import { Edit, SimpleForm, TextInput, required } from 'react-admin'
+import { Edit, SimpleForm, TextInput, required, useGetIdentity } from 'react-admin'
 
 export const UserEdit = () => {
   const transformData = (data: any) => {

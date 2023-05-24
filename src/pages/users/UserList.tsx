@@ -3,7 +3,7 @@ import { Datagrid, DeleteButton, EditButton, List, NumberField, TextField } from
 export const UserList = () => {
   return (
     <List>
-      <Datagrid>
+      <Datagrid bulkActionButtons={false}>
         <TextField source="email" />
         <TextField source="phoneNumber" />
         <TextField source="firstName" />

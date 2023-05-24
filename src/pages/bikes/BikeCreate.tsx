@@ -1,4 +1,4 @@
-import { ActionButton } from '@/components'
+import { BackToListBtn } from '@/components'
 import { Create, SimpleForm, TextInput, required } from 'react-admin'
 
 export const BikeCreate = () => {
@@ -8,7 +8,7 @@ export const BikeCreate = () => {
   ]
 
   return (
-    <Create actions={<ActionButton />}>
+    <Create actions={<BackToListBtn />}>
       <SimpleForm>
         <TextInput source="name" validate={[required()]} />
         <TextInput source="description" multiline={true} label="Bike description" />

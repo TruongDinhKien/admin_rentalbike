@@ -11,7 +11,7 @@ import {
 import { useTranslate } from 'react-admin'
 import { PaginationProps } from './types'
 
-const Pagination: FC<PaginationProps> = (props: PaginationProps) => {
+export const Pagination: FC<PaginationProps> = (props: PaginationProps) => {
   const { page = 1, perPage = 10, rowsPerPageOptions = [5, 10, 25], onChangePage, onChangePerPage, total = 0 } = props
   const totalPages = Math.ceil(total / perPage)
 
@@ -80,5 +80,3 @@ const Pagination: FC<PaginationProps> = (props: PaginationProps) => {
     </div>
   )
 }
-
-export { Pagination }

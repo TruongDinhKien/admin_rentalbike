@@ -16,7 +16,8 @@ import { lightTheme } from './themes'
 import { UserDetail } from './users'
 import { BikeList, BikeCreate, BikeEdit } from './pages/bikes'
 import { UserList, UserCreate, UserEdit } from './pages/users'
-import { RentalList } from './pages/rental'
+import { RentalCreate, RentalList } from './pages/rental'
+import { BikeStatus, BikeStatusCreate } from './pages/status'
 
 const history = createBrowserHistory()
 
@@ -45,9 +46,10 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </CustomRoutes>
-      <Resource name="users" edit={UserEdit} list={UserList} create={UserCreate}/>
+      <Resource name="users" edit={UserEdit} list={UserList} create={UserCreate} />
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
-      <Resource name="rentals" list={RentalList} />
+      <Resource name="bikestatuses" list={BikeStatus} create={BikeStatusCreate} />
+      <Resource name="rentals" list={RentalList} create={RentalCreate} />
     </Admin>
   )
 }
