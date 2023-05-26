@@ -17,20 +17,20 @@ const customVietnameseMessages: TranslationMessages = {
     dashboard: 'Bảng điều khiển',
     Status: 'Trạng thái',
     en: 'Tiếng Anh',
-    vi: 'Tiếng Việt'
+    vi: 'Tiếng Việt',
+    create: 'Tạo mới',
   },
   ra: {
     page: {
-      edit:  "Chỉnh sửa",
-      list: "Danh sách",
+      edit: 'Chỉnh sửa',
+      list: 'Danh sách',
       empty: 'Trống',
-      invite: 'Mời'
-    }
-    ,
+      invite: 'Mời',
+      create: 'Tạo mới',
+    },
     notification: {
-      item_doesnt_exist: "Dữ liệu không tồn tại"
-    }
-    ,
+      item_doesnt_exist: 'Dữ liệu không tồn tại',
+    },
     input: {
       image: {
         upload_single: 'Chọn ảnh',
