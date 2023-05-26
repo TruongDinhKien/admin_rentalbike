@@ -13,12 +13,11 @@ import { MainLayout } from './layout/Layout'
 import { authProvider, dataProvider } from './provider'
 import { BikeList, BikeCreate, BikeEdit } from './pages/bikes'
 import { UserList, UserCreate, UserEdit } from './pages/users'
-import { RentalList } from './pages/rental'
+import { RentalCreate, RentalList } from './pages/rental'
 import { lightTheme } from './custom-themes'
 
 const translations: any = { en: englishMessages, vi: vietnamMessages }
 const history = createBrowserHistory()
-
 
 export const i18nProvider = polyglotI18nProvider(
   locale => translations[locale],
@@ -49,7 +48,7 @@ const App = () => {
       </CustomRoutes>
       <Resource name="users" edit={UserEdit} list={UserList} create={UserCreate} />
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
-      <Resource name="rentals" list={RentalList} />
+      <Resource name="rentals" list={RentalList} create={RentalCreate} />
     </Admin>
   )
 }

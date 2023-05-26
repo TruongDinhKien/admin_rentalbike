@@ -59,14 +59,14 @@ export const items: MenuItemProps[] = [
         url: '/bikes',
         breadcrumbs: true,
       },
-      {
-        id: 'bikestatuses/list',
-        title: 'Status',
-        type: 'item',
-        icon: ListIcon,
-        url: '/bikestatuses',
-        breadcrumbs: true,
-      },
+      // {
+      //   id: 'bikestatuses/list',
+      //   title: 'Status',
+      //   type: 'item',
+      //   icon: ListIcon,
+      //   url: '/bikestatuses',
+      //   breadcrumbs: true,
+      // },
     ],
   },
   {
