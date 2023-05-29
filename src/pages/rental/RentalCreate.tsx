@@ -1,17 +1,7 @@
 import { dataProvider } from '@/provider'
 import _ from 'lodash'
 import React, { useState } from 'react'
-import {
-  AutocompleteArrayInput,
-  BooleanInput,
-  Create,
-  DateInput,
-  FunctionField,
-  ReferenceInput,
-  SelectInput,
-  SimpleForm,
-  useGetList,
-} from 'react-admin'
+import { BooleanInput, Create, DateTimeInput, ReferenceInput, SelectInput, SimpleForm, useGetList } from 'react-admin'
 
 export const RentalCreate = () => {
   const { data, isLoading } = useGetList('users')
@@ -31,8 +21,8 @@ export const RentalCreate = () => {
         <ReferenceInput source="bikeId" reference="bikes">
           <SelectInput sx={{ width: '15%' }} />
         </ReferenceInput>
-        <DateInput source="startTime" />
-        <DateInput source="endTime" />
+        <DateTimeInput source="startTime" />
+        <DateTimeInput source="endTime" />
         <BooleanInput source="status" label="Active" />
         {/* <ReferenceInput source="revenueId" reference="revenues">
           <SelectInput sx={{ width: '15%' }} />

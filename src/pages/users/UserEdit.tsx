@@ -1,7 +1,7 @@
 import { ActionButton } from '@/components'
 import ImageUpload from '@/components/ImageUpload'
 import _ from 'lodash'
-import {  useState } from 'react'
+import { useState } from 'react'
 import { Edit, SimpleForm, TextInput, required } from 'react-admin'
 
 export const UserEdit = () => {
