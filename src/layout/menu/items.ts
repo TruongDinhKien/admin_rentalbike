@@ -61,7 +61,7 @@ export const items: MenuItemProps[] = [
       },
       {
         id: 'bikestatuses/list',
-        title: 'Status',
+        title: 'bike_status',
         type: 'item',
         icon: ListIcon,
         url: '/bikestatuses',
@@ -82,6 +82,14 @@ export const items: MenuItemProps[] = [
         type: 'item',
         icon: ListIcon,
         url: '/rentals',
+        breadcrumbs: true,
+      },
+      {
+        id: 'revenues/list',
+        title: 'revenue_list',
+        type: 'item',
+        icon: ListIcon,
+        url: '/revenues',
         breadcrumbs: true,
       },
     ],

@@ -4,10 +4,10 @@ export const UserList = () => {
   return (
     <List>
       <Datagrid bulkActionButtons={false}>
-        <TextField source="email" />
-        <TextField source="phoneNumber" />
-        <TextField source="firstName" />
-        <TextField source="lastName" />
+        <TextField label="resources.user.email" source="email" />
+        <TextField label="resources.user.phone" source="phoneNumber" />
+        <TextField label="resources.user.firstName" source="firstName" />
+        <TextField label="resources.user.lastName" source="lastName" />
         {/* <NumberField source="roleId" /> */}
         <EditButton />
         <DeleteButton />

@@ -1,12 +1,24 @@
 import { BackToListBtn } from '@/components'
 
-import { Create, DeleteButton, SimpleForm, TextInput, required } from 'react-admin'
+import { Create, DeleteButton, SelectInput, SimpleForm, TextInput, required, useTranslate } from 'react-admin'
 
 export const BikeStatusCreate = () => {
+  const translate = useTranslate()
+  const options = [
+    { id: translate('resources.bike.active'), label: translate('resources.bike.active') },
+    { id: translate('resources.bike.inActive'), label: translate('resources.bike.inActive') },
+  ]
   return (
     <Create actions={<BackToListBtn />}>
       <SimpleForm>
-        <TextInput source="name" validate={[required()]} />
+        <SelectInput
+          label="resources.bike.statusName"
+          source="name"
+          validate={[required()]}
+          optionValue="id"
+          optionText="label"
+          choices={options}
+        />
       </SimpleForm>
     </Create>
   )

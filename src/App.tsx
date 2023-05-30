@@ -13,12 +13,14 @@ import { MainLayout } from './layout/Layout'
 import { authProvider, dataProvider } from './provider'
 import { BikeList, BikeCreate, BikeEdit } from './pages/bikes'
 import { UserList, UserCreate, UserEdit } from './pages/users'
-import { RentalList } from './pages/rental'
+import { RentalCreate, RentalEdit, RentalList } from './pages/rental'
 import { lightTheme } from './custom-themes'
+import { BikeStatusCreate, BikeStatusList } from './pages/status'
+import { IntlProvider } from 'react-intl'
+import { RevenueList } from './pages/revenue'
 
 const translations: any = { en: englishMessages, vi: vietnamMessages }
 const history = createBrowserHistory()
-
 
 export const i18nProvider = polyglotI18nProvider(
   locale => translations[locale],
@@ -47,9 +49,11 @@ const App = () => {
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </CustomRoutes>
-      <Resource name="users" edit={UserEdit} list={UserList} create={UserCreate} />
+      <Resource name="users" list={UserList} create={UserCreate} edit={UserEdit} />
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
-      <Resource name="rentals" list={RentalList} />
+      <Resource name="bikestatuses" list={BikeStatusList} create={BikeStatusCreate} />
+      <Resource name="rentals" list={RentalList} create={RentalCreate} edit={RentalEdit} />
+      <Resource name="revenues" list={RevenueList} />
     </Admin>
   )
 }

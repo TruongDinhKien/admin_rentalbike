@@ -1,20 +1,27 @@
 import { BackToListBtn } from '@/components'
-import { Create, SimpleForm, TextInput, required } from 'react-admin'
+import { FormatCurrencyInput } from '@/components/FormatCurrecnyInput'
+import { Create, ReferenceInput, SelectInput, SimpleForm, TextInput, required } from 'react-admin'
 
 export const BikeCreate = () => {
-  const choices = [
-    { id: '0', name: 'online' },
-    { id: '1', name: 'offline' },
-  ]
-
   return (
     <Create actions={<BackToListBtn />}>
       <SimpleForm>
-        <TextInput source="name" validate={[required()]} />
-        <TextInput source="description" multiline={true} label="Bike description" />
-        {/* <ReferenceInput source="bikestatusId" reference="bikestatuses">
-          <SelectInput choices={choices} />
-        </ReferenceInput> */}
+        <TextInput label="resources.bike.name" source="name" validate={[required()]} />
+        <TextInput source="description" multiline={true} label="resources.bike.description" />
+        <FormatCurrencyInput
+          source="price"
+          label="resources.bike.price"
+          suffix={` VND`}
+          thousandSeparator=","
+          required={true}
+        />
+        <ReferenceInput source="bikestatusId" reference="bikestatuses">
+          <SelectInput
+            label="resources.bike.status"
+            sx={{ width: '12%' }}
+            emptyText={'Vui lòng chọn trạng thái của xe'}
+          />
+        </ReferenceInput>
       </SimpleForm>
     </Create>
   )

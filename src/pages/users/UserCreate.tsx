@@ -5,10 +5,10 @@ export const UserCreate = () => {
   return (
     <Create actions={<BackToListBtn />}>
       <SimpleForm>
-        <TextInput source="email" validate={[required()]} label="Email" />
-        <TextInput source="phoneNumber" />
-        <TextInput source="firstName" />
-        <TextInput source="lastName" />
+        <TextInput label="resources.user.email" source="email" validate={[required()]} />
+        <TextInput label="resources.user.phone" source="phoneNumber" />
+        <TextInput label="resources.user.firstName" source="firstName" />
+        <TextInput label="resources.user.lastName" source="lastName" />
         {/* <NumberInput source="roleId" /> */}
       </SimpleForm>
     </Create>

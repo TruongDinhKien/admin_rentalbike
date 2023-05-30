@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles'
 import { List, ListItemButton, ListItemIcon, ListItemText } from '@mui/material'
 import LogoutIcon from '@mui/icons-material/Logout'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
-import { ShowButton, useGetIdentity, useRedirect } from 'react-admin'
+import { ShowButton, useGetIdentity, useRedirect, useTranslate } from 'react-admin'
 import { Params, useParams } from 'react-router-dom'
 import { dataProvider } from '@/provider'
 import * as api from '@/apis'
@@ -12,6 +12,7 @@ export const ProfileTab: FC<any> = ({ handleLogout }) => {
   const { identity } = useGetIdentity()
   const theme = useTheme()
   const redirect = useRedirect()
+  const translate = useTranslate()
   const params: any = useParams()
   const [loading, setLoading] = useState(false)
   const [err, setErr] = useState('')
@@ -60,24 +61,24 @@ export const ProfileTab: FC<any> = ({ handleLogout }) => {
         },
       }}
     >
-      {/* <ListItemButton selected={selectedIndex === 0} onClick={event => handleListItemClick(event, 0)}>
-        <ListItemIcon>
-        <EditIcon />
-        </ListItemIcon>
-        <ListItemText primary="Edit Profile" />
-      </ListItemButton> */}
       <ListItemButton selected={selectedIndex === 1} onClick={directUserProfile}>
         <ShowButton />
         <ListItemIcon>
           <AccountBoxIcon />
-          <ListItemText style={{ fontWeight: 'bold', color: 'black' }} primary="View Profile" />
+          <ListItemText
+            style={{ fontWeight: 'bold', color: 'black' }}
+            primary={`${translate('resources.profile.viewProfile')}`}
+          />
         </ListItemIcon>
       </ListItemButton>
       <ListItemButton selected={selectedIndex === 2} onClick={handleLogout}>
         <ListItemIcon>
           <LogoutIcon />
         </ListItemIcon>
-        <ListItemText style={{ fontWeight: 'bold', color: 'purple' }} primary="Logout" />
+        <ListItemText
+          style={{ fontWeight: 'bold', color: 'purple' }}
+          primary={`${translate('resources.profile.logout')}`}
+        />
       </ListItemButton>
     </List>
   )

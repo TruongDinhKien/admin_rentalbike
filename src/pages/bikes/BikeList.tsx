@@ -1,16 +1,24 @@
 import { ReferenceField } from '@/components/ReferenceField'
-import { Chip } from '@mui/material'
-import { Datagrid, DeleteButton, EditButton, FunctionField, List, TextField } from 'react-admin'
+import { Datagrid, DeleteButton, EditButton, FunctionField, List, NumberField, TextField } from 'react-admin'
 
 export const BikeList = () => {
   return (
     <List sort={{ field: 'name', order: 'DESC' }}>
       <Datagrid bulkActionButtons={false}>
-        <TextField source="name" />
-        <TextField source="description" />
+        <TextField label="resources.bike.name" source="name" />
+        <TextField label="resources.bike.description" source="description" />
+        <NumberField
+          options={{
+            style: 'currency',
+            currency: 'VND',
+          }}
+          label="resources.bike.price"
+          source="price"
+        />
         <FunctionField
+          label="resources.bike.status"
           render={(v: any) => {
-            return <ReferenceField label="status" source="bikestatusId" reference={'bikestatuses'} field="name" />
+            return <ReferenceField source="bikestatusId" reference={'bikestatuses'} field="name" />
           }}
         />
         <EditButton />
