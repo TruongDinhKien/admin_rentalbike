@@ -10,7 +10,7 @@ const customVietnameseMessages: TranslationMessages = {
     edit: 'Chỉnh sửa',
     user_management: 'Quản lí người dùng',
     bike_management: 'Quản lí xe',
-    rental_management: 'Quản lí chpo thuê',
+    rental_management: 'Quản lí cho thuê',
     rental_list: 'Danh sách cho thuê',
     bike_list: 'Danh sách xe',
     user_list: 'Danh sách người dùng',

@@ -7,6 +7,7 @@ const customEnglishMessages: TranslationMessages = {
   welcome: 'Welcome to bike store',
   menu: {
     posts: 'Posts',
+    welcome: 'Welcome to Rental Bike',
     edit: 'Edit',
     user_management: 'User management',
     bike_management: 'Bike management',
@@ -27,7 +28,7 @@ const customEnglishMessages: TranslationMessages = {
       invite: 'Invite',
     },
     notification: {
-      item_doesnt_exist: "Item does not exist"
+      item_doesnt_exist: 'Item does not exist',
     },
     input: {
       image: {
