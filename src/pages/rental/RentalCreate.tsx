@@ -1,29 +1,23 @@
-import { dataProvider } from '@/provider'
-import _ from 'lodash'
-import React, { useState } from 'react'
-import { BooleanInput, Create, DateTimeInput, ReferenceInput, SelectInput, SimpleForm, useGetList } from 'react-admin'
+import { BackToListBtn } from '@/components'
+import { BooleanInput, Create, DateTimeInput, ReferenceInput, SelectInput, SimpleForm } from 'react-admin'
 
 export const RentalCreate = () => {
-  const { data, isLoading } = useGetList('users')
-
-  const newValue = data?.map((it: any) => {
-    return it.email
-  })
-
-  if (isLoading) return <div>Loading...</div>
-
   return (
-    <Create>
+    <Create actions={<BackToListBtn />}>
       <SimpleForm>
         <ReferenceInput source="userId" reference="users">
-          <SelectInput sx={{ width: '15%' }} optionText={(record: any) => <span>{record.email}</span>} />
+          <SelectInput
+            label="resources.rental.userName"
+            sx={{ width: '15%' }}
+            optionText={(record: any) => <span>{record.email}</span>}
+          />
         </ReferenceInput>
         <ReferenceInput source="bikeId" reference="bikes">
-          <SelectInput sx={{ width: '15%' }} />
+          <SelectInput label="resources.rental.bikeName" sx={{ width: '15%' }} />
         </ReferenceInput>
-        <DateTimeInput source="startTime" />
-        <DateTimeInput source="endTime" />
-        <BooleanInput source="status" label="Active" />
+        <DateTimeInput label="resources.rental.startTime" source="startTime" />
+        <DateTimeInput label="resources.rental.endTime" source="endTime" />
+        <BooleanInput source="status" label="resources.rental.status" />
         {/* <ReferenceInput source="revenueId" reference="revenues">
           <SelectInput sx={{ width: '15%' }} />
         </ReferenceInput> */}

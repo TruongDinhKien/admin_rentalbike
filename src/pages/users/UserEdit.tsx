@@ -18,11 +18,11 @@ export const UserEdit = () => {
     <div>
       <Edit transform={transformData} actions={<ActionButton />}>
         <SimpleForm>
-          <TextInput source="email" validate={required()} />
-          <TextInput source="phoneNumber" />
-          <TextInput source="firstName" />
-          <TextInput source="lastName" />
-          <TextInput source="roleName" />
+          <TextInput label="resources.user.email" source="email" validate={required()} />
+          <TextInput label="resources.user.phone" source="phoneNumber" />
+          <TextInput label="resources.user.firstName" source="firstName" />
+          <TextInput label="resources.user.lastName" source="lastName" />
+          {/* <TextInput source="roleName" /> */}
         </SimpleForm>
       </Edit>
       <ImageUpload url={url} setUrl={setUrl} loading={loading} setLoading={setLoading}></ImageUpload>

@@ -19,6 +19,7 @@ const customVietnameseMessages: TranslationMessages = {
     en: 'Tiếng Anh',
     vi: 'Tiếng Việt',
     create: 'Tạo mới',
+    bike_status: 'Trạng thái xe đạp',
   },
   ra: {
     page: {
@@ -30,6 +31,8 @@ const customVietnameseMessages: TranslationMessages = {
     },
     notification: {
       item_doesnt_exist: 'Dữ liệu không tồn tại',
+      updated: 'Cập nhật thành công',
+      created: 'Tạo thành công',
     },
     input: {
       image: {
@@ -92,6 +95,12 @@ const customVietnameseMessages: TranslationMessages = {
     },
   },
   resources: {
+    user: {
+      email: 'Email',
+      phone: 'Số điện thoại',
+      firstName: 'Tên',
+      lastName: 'Họ',
+    },
     edit: {
       name: 'Cập nhật',
     },
@@ -156,8 +165,28 @@ const customVietnameseMessages: TranslationMessages = {
         assets: 'Hình ảnh',
       },
     },
+    rental: {
+      userName: 'Tên người dùng',
+      bikeName: 'Tên xe đạp',
+      startTime: 'Thời gian bắt đầu thuê',
+      endTime: 'Thời gian trả xe',
+      status: 'Trạng thái hoạt động',
+    },
+    bike: {
+      id: 'Id',
+      name: 'Tên xe',
+      description: 'Mô tả',
+      price: 'Giá thuê',
+      status: 'Trạng thái xe',
+      statusName: 'Tên trạng thái',
+      active: 'Hoạt động',
+      inActive: 'Không hoạt động',
+    },
     profile: {
-      name: 'Xeno',
+      name: 'Thông tin',
+      welcome: 'Chào',
+      viewProfile: 'Xem thông tin',
+      logout: 'Đăng xuất',
     },
   },
 }

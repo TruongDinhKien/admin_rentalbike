@@ -1,2 +1,2 @@
-export * from './BikeStatus'
+export * from './BikeStatusList'
 export * from './BikeStatusCreate'

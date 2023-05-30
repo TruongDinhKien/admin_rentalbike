@@ -19,6 +19,7 @@ const customEnglishMessages: TranslationMessages = {
     Status: 'Status',
     en: 'English',
     vi: 'Vietnamese',
+    bike_status: 'Bike status',
   },
   ra: {
     page: {
@@ -29,6 +30,8 @@ const customEnglishMessages: TranslationMessages = {
     },
     notification: {
       item_doesnt_exist: 'Item does not exist',
+      updated: 'Updated success',
+      created: 'Created success',
     },
     input: {
       image: {
@@ -153,6 +156,29 @@ const customEnglishMessages: TranslationMessages = {
         status: 'Status',
         assets: 'Image',
       },
+    },
+    rental: {
+      userName: 'User name',
+      bikeName: 'Bike name',
+      startTime: 'Start time for renting',
+      endTime: 'End time for renting',
+      status: 'Activity status',
+    },
+    bike: {
+      id: 'Id',
+      name: 'Bike name',
+      description: 'Description',
+      price: 'Price',
+      status: 'Bike status',
+      statusName: 'Status name',
+      active: 'Active',
+      inActive: 'InActive',
+    },
+    profile: {
+      name: 'Profile',
+      welcome: 'Hi',
+      viewProfile: 'View profile',
+      logout: 'Log out',
     },
   },
 }

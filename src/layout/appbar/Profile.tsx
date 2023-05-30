@@ -121,17 +121,6 @@ export const Profile = () => {
         {({ TransitionProps }) => (
           <Transitions type="fade" in={open} {...TransitionProps}>
             {open && (
-              // <Paper
-              //   sx={{
-              //     boxShadow: theme.customShadows.z1,
-              //     width: 290,
-              //     minWidth: 240,
-              //     maxWidth: 290,
-              //     [theme.breakpoints.down('md')]: {
-              //       maxWidth: 250,
-              //     },
-              //   }}
-              // >
               <ClickAwayListener onClickAway={handleClose}>
                 <MainCard elevation={0} border={false} content={false}>
                   <CardContent sx={{ px: 2.5, pt: 3 }}>
@@ -143,12 +132,11 @@ export const Profile = () => {
                            */}
                           <Stack>
                             <Typography variant="body2" color="textSecondary">
-                              Hi, {identity?.fullName}
+                              {`${translate('resources.profile.welcome')}`}, {identity?.fullName}
                             </Typography>
                           </Stack>
                         </Stack>
                       </Grid>
-                     
                     </Grid>
                   </CardContent>
                   {open && (
@@ -171,28 +159,9 @@ export const Profile = () => {
                                 }}
                               />
                             }
-                            label="Profile"
+                            label={`${translate('resources.profile.name')}`}
                             {...a11yProps(0)}
                           />
-                          {/* <Tab
-                            sx={{
-                              display: 'flex',
-                              flexDirection: 'row',
-                              justifyContent: 'center',
-                              alignItems: 'center',
-                              textTransform: 'capitalize',
-                            }}
-                            icon={
-                              <SettingsIcon
-                                style={{
-                                  marginBottom: 0,
-                                  marginRight: '10px',
-                                }}
-                              />
-                            }
-                            label="Setting"
-                            {...a11yProps(1)}
-                          /> */}
                         </Tabs>
                       </Box>
                       <TabPanel value={value} index={0} dir={theme.direction}>
@@ -205,7 +174,6 @@ export const Profile = () => {
                   )}
                 </MainCard>
               </ClickAwayListener>
-              // </Paper>
             )}
           </Transitions>
         )}
