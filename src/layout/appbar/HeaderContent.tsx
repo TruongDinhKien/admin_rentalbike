@@ -15,8 +15,8 @@ const darkThemeCustom = createTheme({
   palette: {
     mode: 'dark',
     background: {
-      default: '#000', // Default background color
-      paper: '#000', // Background color for paper surfaces
+      default: '#010101', // Default background color
+      paper: '#010101', // Background color for paper surfaces
     },
     // Add other properties as needed
   } as CustomPaletteOptions,
