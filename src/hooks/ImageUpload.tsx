@@ -52,27 +52,31 @@ export const useImageUpload = () => {
   }
 
   return {
-    ImageUpload: ({ source }: { source: string }) => (
-      <div className='m-3 position-relative'>
-        <input type="file" className="positon-absolute w-100 h-100 cursor-pointer opacity-0" onChange={handleImageChange} accept="image/*"  />
-        <br></br>
-        {preview ? (
-          <img src={preview as string} width={200} alt="preview" />
-        ) : (
-          <FunctionField
-            label={`resources.user.${source}`}
-            source={source}
-            render={(record: any) => (
-              <img
-                src={`https://res.cloudinary.com/dwcu0t4yu/image/upload/v1685069077/${record.avatarUrl}`}
-                alt="Avatar"
-                style={{ width: 200 }}
-              />
-            )}
+    ImageUpload: ({ source }: { source: string }) => {
+      console.log(process.env.BASE_IMG_CLOUD,'ab');
+      return (
+        <div className="m-3 position-relative">
+          <input
+            type="file"
+            className="positon-absolute w-100 h-100 cursor-pointer opacity-0"
+            onChange={handleImageChange}
+            accept="image/*"
           />
-        )}
-      </div>
-    ),
+          <br></br>
+          {preview ? (
+            <img src={preview as string} width={200} alt="preview" />
+          ) : (
+            <FunctionField
+              label={`resources.user.${source}`}
+              source={source}
+              render={(record: any) => (
+                <img src={`${process.env.REACT_APP_BASE_IMG_CLOUD}/${record.avatarUrl}`} alt="Avatar" style={{ width: 200 }} />
+              )}
+            />
+          )}
+        </div>
+      )
+    },
     onUpdateImg: uploadImage,
     loading,
     isUpload: !!image,
