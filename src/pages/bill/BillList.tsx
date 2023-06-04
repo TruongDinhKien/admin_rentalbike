@@ -1,7 +1,7 @@
 import { ReferenceField } from '@/components/ReferenceField'
 import { Datagrid, DateField, DeleteButton, EditButton, FunctionField, List, NumberField } from 'react-admin'
 
-export const RevenueList = () => {
+export const BillList = () => {
   return (
     <List sort={{ field: 'name', order: 'DESC' }}>
       <Datagrid bulkActionButtons={false}>

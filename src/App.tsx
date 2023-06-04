@@ -16,8 +16,7 @@ import { UserList, UserCreate, UserEdit } from './pages/users'
 import { RentalCreate, RentalEdit, RentalList } from './pages/rental'
 import { lightTheme } from './custom-themes'
 import { BikeStatusCreate, BikeStatusList } from './pages/status'
-import { IntlProvider } from 'react-intl'
-import { RevenueList } from './pages/revenue'
+import { BillList } from './pages/bill'
 
 const translations: any = { en: englishMessages, vi: vietnamMessages }
 const history = createBrowserHistory()
@@ -53,7 +52,7 @@ const App = () => {
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
       <Resource name="bikestatuses" list={BikeStatusList} create={BikeStatusCreate} />
       <Resource name="rentals" list={RentalList} create={RentalCreate} edit={RentalEdit} />
-      <Resource name="revenues" list={RevenueList} />
+      <Resource name="bills" list={BillList} />
     </Admin>
   )
 }
