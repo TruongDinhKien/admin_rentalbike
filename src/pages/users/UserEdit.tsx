@@ -1,18 +1,28 @@
 import { ActionButton } from '@/components'
-import ImageUpload from '@/components/ImageUpload'
+import { useImageUpload } from '@/hooks/ImageUpload'
 import _ from 'lodash'
 import { useState } from 'react'
-import { Edit, SimpleForm, TextInput, required } from 'react-admin'
+import { Edit, FunctionField, ImageField, SaveButton, SimpleForm, TextInput, required } from 'react-admin'
 
 export const UserEdit = () => {
-  const transformData = (data: any) => {
+  const { ImageUpload, onUpdateImg, isUpload } = useImageUpload()
+
+  const transformData = async (data: any) => {
+    console.log(data, 'data')
+    const imgUrl = await onUpdateImg()
+
+    console.log(imgUrl, 'imgUrl')
+
+    if (!imgUrl) return
+
     let value = _.omit(data, ['id'])
     value = _.omitBy(value, val => val === null)
-    value = { ...value }
+    console.log(value, 'value')
+    value = { ...value, avatarUrl: imgUrl }
+
+    console.log(value, 'value')
     return value
   }
-  const [url, setUrl] = useState('')
-  const [loading, setLoading] = useState(false)
 
   return (
     <div>
@@ -23,9 +33,9 @@ export const UserEdit = () => {
           <TextInput label="resources.user.firstName" source="firstName" />
           <TextInput label="resources.user.lastName" source="lastName" />
           {/* <TextInput source="roleName" /> */}
+          <ImageUpload source="avatarUrl" />
         </SimpleForm>
       </Edit>
-      <ImageUpload url={url} setUrl={setUrl} loading={loading} setLoading={setLoading}></ImageUpload>
     </div>
   )
 }
