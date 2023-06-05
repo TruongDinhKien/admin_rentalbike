@@ -21,6 +21,7 @@ const customEnglishMessages: TranslationMessages = {
     en: 'English',
     vi: 'Vietnamese',
     bike_status: 'Bike status',
+    create: 'Crate',
   },
   ra: {
     page: {
@@ -97,9 +98,9 @@ const customEnglishMessages: TranslationMessages = {
   resources: {
     user: {
       email: 'Email',
-      phone: 'Phone',
-      firstName: 'First Name',
-      lastName: 'Last Name',
+      phone: 'Phone number',
+      firstName: 'First name',
+      lastName: 'Last name',
     },
     edit: {
       name: 'Update',
