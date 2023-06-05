@@ -101,6 +101,7 @@ const customEnglishMessages: TranslationMessages = {
       phone: 'Phone',
       firstName: 'First Name',
       lastName: 'Last Name',
+      uploadAvatar: 'Change your avatar',
     },
     edit: {
       name: 'Update',
@@ -171,6 +172,7 @@ const customEnglishMessages: TranslationMessages = {
       startTime: 'Start time for renting',
       endTime: 'End time for renting',
       status: 'Activity status',
+      amount: 'Price',
     },
     bike: {
       id: 'Id',
@@ -188,6 +190,10 @@ const customEnglishMessages: TranslationMessages = {
       welcome: 'Hi',
       viewProfile: 'View profile',
       logout: 'Log out',
+    },
+    revenue: {
+      amount: 'Price',
+      date: 'Date renting',
     },
   },
 }
