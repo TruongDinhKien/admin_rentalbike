@@ -96,6 +96,13 @@ const customVietnameseMessages: TranslationMessages = {
     },
   },
   resources: {
+    dashboard: {
+      totalRevenue: 'Tổng số doanh thu',
+      totalTax: 'Tổng số thuế cần thanh toán',
+      totalEarnings: 'Tổng số tiền thực nhận',
+      totalRentalBike: 'Tổng số xe đạp được thuê',
+      bike: 'Xe',
+    },
     user: {
       email: 'Email',
       phone: 'Số điện thoại',
