@@ -1,20 +1,21 @@
-import Card from '@mui/material/Card'
-import CardContent from '@mui/material/CardContent'
-import { Title, useRecordContext, useTranslate } from 'react-admin'
-import { Box, Grid, TextField } from '@mui/material'
+import { useTranslate } from 'react-admin'
+import { Grid } from '@mui/material'
 import { useEffect, useState } from 'react'
 import { dataProvider } from '@/provider'
 import _ from 'lodash'
-import { MainCard } from '@/components'
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
+import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
+import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
+import MoneyOffIcon from '@mui/icons-material/MoneyOff';
+
+import { AppWidgetSummary } from '@/components/AppWidgetSummary'
 
 export const Dashboard = () => {
-  const [loading, setLoading] = useState(false)
   const [value, setValue] = useState<any>()
   const translate = useTranslate()
 
   const fetchDashboard = async () => {
     try {
-      setLoading(true)
       const res = await dataProvider('REMOTE', `statistic`, {
         requestMethod: 'GET',
       })
@@ -31,25 +32,42 @@ export const Dashboard = () => {
   }, [])
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-      <Card sx={{ width: 350, height: 200 }}>
-        <h4 style={{ textAlign: 'center' }}>{translate('resources.dashboard.totalRevenue')}</h4>
-        <CardContent style={{ textAlign: 'center' }}>{value?.totalRevenue} VND</CardContent>
-      </Card>
-      <Card sx={{ width: 350, height: 200 }}>
-        <h4 style={{ textAlign: 'center' }}>{translate('resources.dashboard.totalTax')}</h4>
-        <CardContent style={{ textAlign: 'center' }}>{value?.totalTax} VND</CardContent>
-      </Card>
-      <Card sx={{ width: 350, height: 200 }}>
-        <h4 style={{ textAlign: 'center' }}>{translate('resources.dashboard.totalEarnings')}</h4>
-        <CardContent style={{ textAlign: 'center' }}>{value?.totalEarnings} VND</CardContent>
-      </Card>
-      <Card sx={{ width: 350, height: 200 }}>
-        <h4 style={{ textAlign: 'center' }}>{translate('resources.dashboard.totalRentalBike')}</h4>
-        <CardContent style={{ textAlign: 'center' }}>
-          {value?.totalRentalBike} {translate('resources.dashboard.bike')}
-        </CardContent>
-      </Card>
-    </div>
+    <Grid container spacing={3}>
+      <Grid item xs={12} sm={6} md={3}>
+        <AppWidgetSummary
+          title={translate('resources.dashboard.totalRevenue')}
+          total={value?.totalRevenue + ' VND'}
+          color="info"
+          icon={AttachMoneyIcon}
+        />
+      </Grid>
+
+      <Grid item xs={12} sm={6} md={3}>
+        <AppWidgetSummary
+          title={translate('resources.dashboard.totalTax')}
+          total={value?.totalTax + ' VND'}
+          color="error"
+          icon={MoneyOffIcon}
+          
+        />
+      </Grid>
+
+      <Grid item xs={12} sm={6} md={3}>
+        <AppWidgetSummary
+          title={translate('resources.dashboard.totalEarnings')}
+          total={value?.totalEarnings + ' VND'}
+          color="warning"
+          icon={PointOfSaleIcon}
+        />
+      </Grid>
+
+      <Grid item xs={12} sm={6} md={3}>
+        <AppWidgetSummary
+          title={translate('resources.dashboard.totalRentalBike')}
+          total={value?.totalRentalBike + ' ' + translate('resources.dashboard.bike')}
+          icon={DirectionsBikeIcon}
+        />
+      </Grid>
+    </Grid>
   )
 }

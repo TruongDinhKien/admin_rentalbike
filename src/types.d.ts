@@ -169,3 +169,13 @@ export type Filter<T> = {
   skip?: number
   order?: string
 }
+
+export type TBike = {
+  id: number
+  name?: string
+  quantity?: number
+  description?: string
+  imgUrl?: string
+  price?: number
+  bikestatusId?: number
+}

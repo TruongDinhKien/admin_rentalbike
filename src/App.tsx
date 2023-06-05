@@ -17,6 +17,7 @@ import { RentalCreate, RentalEdit, RentalList } from './pages/rental'
 import { lightTheme } from './custom-themes'
 import { BikeStatusCreate, BikeStatusList } from './pages/status'
 import { BillList } from './pages/bill'
+import ProductsPage from './product-temp'
 
 const translations: any = { en: englishMessages, vi: vietnamMessages }
 const history = createBrowserHistory()
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/product" element={<ProductsPage />} />
       </CustomRoutes>
       <Resource name="users" list={UserList} create={UserCreate} edit={UserEdit} />
       <Resource name="bikes" list={BikeList} create={BikeCreate} edit={BikeEdit} />
