@@ -14,6 +14,7 @@ const customVietnameseMessages: TranslationMessages = {
     rental_list: 'Danh sách cho thuê',
     bike_list: 'Danh sách xe',
     user_list: 'Danh sách người dùng',
+    bill_list: 'Danh sách đơn hàng',
     dashboard: 'Bảng điều khiển',
     Status: 'Trạng thái',
     en: 'Tiếng Anh',
@@ -181,6 +182,7 @@ const customVietnameseMessages: TranslationMessages = {
       statusName: 'Tên trạng thái',
       active: 'Hoạt động',
       inActive: 'Không hoạt động',
+      quantity: 'Số lượng',
     },
     profile: {
       name: 'Thông tin',

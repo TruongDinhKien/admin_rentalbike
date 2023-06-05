@@ -41,11 +41,12 @@ const getPermissions = (params: any) => {
 
 const getIdentity = () => {
   const user = storage.load('auth')
-  // console.log('check user --->', user)
+
   const identity = {
     id: user.id,
     email: user.email,
     fullName: user?.firstName + ' ' + user?.lastName,
+    avatarUrl: user?.avatarUrl,
   }
   return Promise.resolve(identity)
 }

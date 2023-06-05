@@ -79,7 +79,8 @@ export const Profile = () => {
   const { identity } = useGetIdentity()
 
   const iconBackColorOpen = 'grey.300'
-  const avatar = 'https://i1.sndcdn.com/artworks-000435379884-wpolr3-t240x240.jpg'
+  const baseUrl = process.env.REACT_APP_BASE_IMAGE_URL
+
   return (
     <Box sx={{ flexShrink: 0, ml: 0.75 }}>
       <ButtonBase
@@ -95,8 +96,12 @@ export const Profile = () => {
         aria-haspopup="true"
         onClick={handleToggle}
       >
-        <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
-          <Avatar alt="profile user" src={avatar} sx={{ width: 52, height: 52, bgcolor: green[500] }} />
+        <Stack direction="row" spacing={2} alignItems="center">
+          <Avatar
+            alt="Profile user"
+            src={`${baseUrl}/${identity?.avatarUrl}`}
+            sx={{ marginLeft: '5px', width: 52, height: 52, bgcolor: green[500] }}
+          />
           <Typography variant="subtitle1">{identity?.username}</Typography>
         </Stack>
       </ButtonBase>

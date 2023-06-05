@@ -15,6 +15,7 @@ const customEnglishMessages: TranslationMessages = {
     rental_list: 'Rental List',
     bike_list: 'Bike List',
     user_list: 'User List',
+    bill_list: 'Bill List',
     dashboard: 'Dashboard',
     Status: 'Status',
     en: 'English',
@@ -97,9 +98,9 @@ const customEnglishMessages: TranslationMessages = {
   resources: {
     user: {
       email: 'Email',
-      phone: 'Phone number',
-      firstName: 'First name',
-      lastName: 'Last name',
+      phone: 'Phone',
+      firstName: 'First Name',
+      lastName: 'Last Name',
     },
     edit: {
       name: 'Update',
@@ -180,6 +181,7 @@ const customEnglishMessages: TranslationMessages = {
       statusName: 'Status name',
       active: 'Active',
       inActive: 'InActive',
+      quantity: 'Quantity',
     },
     profile: {
       name: 'Profile',
