@@ -96,18 +96,19 @@ const customEnglishMessages: TranslationMessages = {
     },
   },
   resources: {
+    dashboard: {
+      totalRevenue: 'Total Revenue',
+      totalTax: 'Total tax have to pay',
+      totalEarnings: 'Total earning price',
+      totalRentalBike: 'Total bikes have been rented',
+      bike: 'Bike',
+    },
     user: {
       email: 'Email',
-<<<<<<< HEAD
       phone: 'Phone',
       firstName: 'First Name',
       lastName: 'Last Name',
       uploadAvatar: 'Change your avatar',
-=======
-      phone: 'Phone number',
-      firstName: 'First name',
-      lastName: 'Last name',
->>>>>>> origin/feature/quan.nguyen/reactadmin
     },
     edit: {
       name: 'Update',

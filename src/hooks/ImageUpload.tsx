@@ -14,7 +14,7 @@ export const useImageUpload = () => {
     setLoading(true)
 
     const data = new FormData()
-    console.log(image, process.env.REACT_APP_CLOUDINARY_CLOUD_NAME, process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
+
     if (!image || !process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || !process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET)
       return
     data.append('file', image)
