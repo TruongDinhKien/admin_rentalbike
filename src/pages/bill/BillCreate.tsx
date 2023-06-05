@@ -1,5 +1,5 @@
 import { BackToListBtn } from '@/components'
-import { BooleanInput, Create, DateTimeInput, NumberInput, ReferenceInput, SelectInput, SimpleForm } from 'react-admin'
+import { Create, DateTimeInput, NumberInput, ReferenceInput, SelectInput, SimpleForm } from 'react-admin'
 
 export const ReveneCreate = () => {
   return (

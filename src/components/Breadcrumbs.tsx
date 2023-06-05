@@ -1,11 +1,11 @@
 import { useEffect, useState, FC } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useParams, useRoutes } from 'react-router-dom'
 import MuiBreadcrumbs from '@mui/material/Breadcrumbs'
 import { Grid, Typography } from '@mui/material'
 import { MainCard } from './MainCard'
 import { MenuItemProps } from '../layout/menu/items'
 import _ from 'lodash'
-import { useTranslate } from 'react-admin'
+import { useRecordContext, useTranslate } from 'react-admin'
 
 type BreadcrumbsProps = {
   navigation: MenuItemProps[]
@@ -17,9 +17,12 @@ type BreadcrumbsProps = {
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({ navigation, title }) => {
   const location = useLocation()
+  const userId = location.pathname.substring(location.pathname.lastIndexOf('/') + 1)
   const translate = useTranslate()
   const [main, setMain] = useState<MenuItemProps>()
   const [item, setItem] = useState<MenuItemProps>()
+
+  // const { id: userId } = record;
 
   // set active item state
   const getCollapse = (menu: MenuItemProps) => {
@@ -99,7 +102,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ navigation, title }) => {
 
   // items
   if (item && item.type === 'item') {
-    itemTitle = translate(`menu.${item.title}`)
+    itemTitle = translate(`menu.${userId === item.title ? 'edit' : item.title}`)
     itemContent = (
       <Typography variant="subtitle1" color="textPrimary" sx={{ textTransform: 'capitalize' }}>
         {itemTitle}

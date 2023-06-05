@@ -15,6 +15,7 @@ export const BikeList = () => {
           label="resources.bike.price"
           source="price"
         />
+        <TextField label="resources.bike.quantity" source="quantity" />
         <FunctionField
           label="resources.bike.status"
           render={(v: any) => {

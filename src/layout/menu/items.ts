@@ -1,8 +1,6 @@
-import PostAddIcon from '@mui/icons-material/PostAdd'
 import { DashboardOutlined } from '@mui/icons-material'
 import GridViewIcon from '@mui/icons-material/GridView'
 import ListIcon from '@mui/icons-material/List'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 
 export type MenuItemProps = {
   id: string
@@ -85,11 +83,11 @@ export const items: MenuItemProps[] = [
         breadcrumbs: true,
       },
       {
-        id: 'revenues/list',
-        title: 'revenue_list',
+        id: 'bills/list',
+        title: 'bill_list',
         type: 'item',
         icon: ListIcon,
-        url: '/revenues',
+        url: '/bills',
         breadcrumbs: true,
       },
     ],
