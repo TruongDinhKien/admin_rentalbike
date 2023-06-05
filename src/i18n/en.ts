@@ -98,10 +98,16 @@ const customEnglishMessages: TranslationMessages = {
   resources: {
     user: {
       email: 'Email',
+<<<<<<< HEAD
       phone: 'Phone',
       firstName: 'First Name',
       lastName: 'Last Name',
       uploadAvatar: 'Change your avatar',
+=======
+      phone: 'Phone number',
+      firstName: 'First name',
+      lastName: 'Last name',
+>>>>>>> origin/feature/quan.nguyen/reactadmin
     },
     edit: {
       name: 'Update',
