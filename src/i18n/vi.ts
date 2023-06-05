@@ -101,6 +101,7 @@ const customVietnameseMessages: TranslationMessages = {
       phone: 'Số điện thoại',
       firstName: 'Tên',
       lastName: 'Họ',
+      uploadAvatar: 'Thay đổi ảnh đại diện',
     },
     edit: {
       name: 'Cập nhật',
@@ -172,6 +173,7 @@ const customVietnameseMessages: TranslationMessages = {
       startTime: 'Thời gian bắt đầu thuê',
       endTime: 'Thời gian trả xe',
       status: 'Trạng thái hoạt động',
+      amount: 'Giá',
     },
     bike: {
       id: 'Id',
@@ -189,6 +191,10 @@ const customVietnameseMessages: TranslationMessages = {
       welcome: 'Chào',
       viewProfile: 'Xem thông tin',
       logout: 'Đăng xuất',
+    },
+    revenue: {
+      amount: 'Giá',
+      date: 'Ngày thuê',
     },
   },
 }

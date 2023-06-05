@@ -1,7 +1,24 @@
 import { BackToListBtn } from '@/components'
-import { BooleanInput, Create, DateTimeInput, ReferenceInput, SelectInput, SimpleForm } from 'react-admin'
+import {
+  BooleanInput,
+  Create,
+  DateTimeInput,
+  NumberInput,
+  ReferenceInput,
+  SelectInput,
+  SimpleForm,
+  required,
+  useTranslate,
+} from 'react-admin'
 
 export const RentalCreate = () => {
+  const translate = useTranslate()
+
+  const options = [
+    { id: 'awaiting', label: 'awaiting' },
+    { id: 'renting', label: 'renting' },
+    { id: 'returned', label: 'returned' },
+  ]
   return (
     <Create actions={<BackToListBtn />}>
       <SimpleForm>
@@ -15,12 +32,17 @@ export const RentalCreate = () => {
         <ReferenceInput source="bikeId" reference="bikes">
           <SelectInput label="resources.rental.bikeName" sx={{ width: '15%' }} />
         </ReferenceInput>
+        <NumberInput source="amount" label="resources.rental.amount" />
         <DateTimeInput label="resources.rental.startTime" source="startTime" />
         <DateTimeInput label="resources.rental.endTime" source="endTime" />
-        <BooleanInput source="status" label="resources.rental.status" />
-        {/* <ReferenceInput source="revenueId" reference="revenues">
-          <SelectInput sx={{ width: '15%' }} />
-        </ReferenceInput> */}
+        <SelectInput
+          label="resources.rental.status"
+          source="status"
+          validate={[required()]}
+          optionValue="id"
+          optionText="label"
+          choices={options}
+        />
       </SimpleForm>
     </Create>
   )

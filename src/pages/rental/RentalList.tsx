@@ -1,5 +1,15 @@
 import { ReferenceField } from '@/components/ReferenceField'
-import { BooleanField, Datagrid, DateField, DeleteButton, EditButton, FunctionField, List } from 'react-admin'
+import {
+  BooleanField,
+  Datagrid,
+  DateField,
+  DeleteButton,
+  EditButton,
+  FunctionField,
+  List,
+  NumberField,
+  TextField,
+} from 'react-admin'
 
 export const RentalList = () => {
   return (
@@ -17,15 +27,10 @@ export const RentalList = () => {
             return <ReferenceField label="Bike" source="bikeId" reference={'bikes'} field="name" />
           }}
         />
+        <NumberField source="amount" label="resources.rental.amount" />
         <DateField label="resources.rental.startTime" source="startTime" />
         <DateField label="resources.rental.endTime" source="endTime" />
-        <BooleanField label="resources.rental.status" source="status" />
-        {/* <FunctionField
-          label="resources.rental.revenue"
-          render={(v: any) => {
-            return <ReferenceField label="User" source="userId" reference={'users'} field="email" />
-          }}
-        /> */}
+        <TextField label="resources.rental.status" source="status" />
         <EditButton />
         <DeleteButton />
       </Datagrid>

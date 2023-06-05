@@ -98,9 +98,16 @@ const customEnglishMessages: TranslationMessages = {
   resources: {
     user: {
       email: 'Email',
+<<<<<<< HEAD
+      phone: 'Phone',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      uploadAvatar: 'Change your avatar',
+=======
       phone: 'Phone number',
       firstName: 'First name',
       lastName: 'Last name',
+>>>>>>> origin/feature/quan.nguyen/reactadmin
     },
     edit: {
       name: 'Update',
@@ -171,6 +178,7 @@ const customEnglishMessages: TranslationMessages = {
       startTime: 'Start time for renting',
       endTime: 'End time for renting',
       status: 'Activity status',
+      amount: 'Price',
     },
     bike: {
       id: 'Id',
@@ -188,6 +196,10 @@ const customEnglishMessages: TranslationMessages = {
       welcome: 'Hi',
       viewProfile: 'View profile',
       logout: 'Log out',
+    },
+    revenue: {
+      amount: 'Price',
+      date: 'Date renting',
     },
   },
 }

@@ -1,8 +1,23 @@
 import { ActionButton } from '@/components'
 import _ from 'lodash'
-import { BooleanInput, DateTimeInput, Edit, FunctionField, ReferenceInput, SelectInput, SimpleForm } from 'react-admin'
+import {
+  BooleanInput,
+  DateTimeInput,
+  Edit,
+  FunctionField,
+  ReferenceInput,
+  SelectInput,
+  SimpleForm,
+  NumberInput,
+  required,
+} from 'react-admin'
 
 export const RentalEdit = () => {
+  const options = [
+    { id: 'awaiting', label: 'awaiting' },
+    { id: 'renting', label: 'renting' },
+    { id: 'returned', label: 'returned' },
+  ]
   const transformData = (data: any) => {
     let value = _.pick(data, ['bikeId', 'startTime', 'endTime', 'status'])
     return { ...value }
@@ -31,9 +46,17 @@ export const RentalEdit = () => {
             )
           }}
         />
+        <NumberInput source="amount" label="resources.rental.amount" />
         <DateTimeInput label="resources.rental.startTime" source="startTime" />
         <DateTimeInput label="resources.rental.endTime" source="endTime" />
-        <BooleanInput source="status" label="resources.rental.status" />
+        <SelectInput
+          label="resources.rental.status"
+          source="status"
+          validate={[required()]}
+          optionValue="id"
+          optionText="label"
+          choices={options}
+        />
       </SimpleForm>
     </Edit>
   )
