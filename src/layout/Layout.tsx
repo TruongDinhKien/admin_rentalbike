@@ -3,12 +3,18 @@ import { useTheme } from '@mui/material/styles'
 import { Box, useMediaQuery } from '@mui/material'
 import { Header } from './appbar'
 import { Breadcrumbs } from '@/components'
-import { useSidebarState } from 'react-admin'
+import { useGetIdentity, useRedirect, useSidebarState } from 'react-admin'
 import { items, MainDrawer } from './menu'
 
 export const MainLayout: FC<any> = ({ children }) => {
   const theme = useTheme()
   const [open, setOpen] = useSidebarState()
+  const { identity } = useGetIdentity()
+  const redirect = useRedirect()
+
+  if (identity?.roles) {
+    if (!identity?.roles?.includes('admin')) redirect('/product')
+  }
 
   const matchDownLG = useMediaQuery(theme.breakpoints.down('xl'))
 

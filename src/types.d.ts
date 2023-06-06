@@ -178,4 +178,5 @@ export type TBike = {
   imgUrl?: string
   price?: number
   bikestatusId?: number
+  onUpdate?: any
 }

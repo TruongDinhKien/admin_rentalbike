@@ -23,6 +23,7 @@ const customVietnameseMessages: TranslationMessages = {
     bike_status: 'Trạng thái xe đạp',
   },
   ra: {
+    auth: {auth_check_error: "Vui lòng đăng nhâp trước"},
     page: {
       edit: 'Chỉnh sửa',
       list: 'Danh sách',

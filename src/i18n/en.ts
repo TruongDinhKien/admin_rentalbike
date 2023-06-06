@@ -24,6 +24,7 @@ const customEnglishMessages: TranslationMessages = {
     create: 'Crate',
   },
   ra: {
+    auth: {auth_check_error: "Please login first"},
     page: {
       edit: 'Edit',
       list: 'List',

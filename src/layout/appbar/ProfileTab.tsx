@@ -5,7 +5,6 @@ import LogoutIcon from '@mui/icons-material/Logout'
 import AccountBoxIcon from '@mui/icons-material/AccountBox'
 import { ShowButton, useGetIdentity, useRedirect, useTranslate } from 'react-admin'
 import { Params, useParams } from 'react-router-dom'
-import { dataProvider } from '@/provider'
 import * as api from '@/apis'
 
 export const ProfileTab: FC<any> = ({ handleLogout }) => {
@@ -49,6 +48,8 @@ export const ProfileTab: FC<any> = ({ handleLogout }) => {
   const directUserProfile = (params: any) => {
     identity?.id && redirect(`users/${identity.id}/edit`)
   }
+
+  if (loading) return null
 
   return (
     <List

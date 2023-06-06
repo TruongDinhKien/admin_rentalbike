@@ -7,8 +7,6 @@ import {
   CardContent,
   ClickAwayListener,
   Grid,
-  IconButton,
-  Paper,
   Popper,
   Stack,
   Tab,
@@ -18,9 +16,8 @@ import {
 import { MainCard, Transitions } from '@/components'
 import { ProfileTab } from './ProfileTab'
 import { SettingTab } from './SettingTab'
-import LogoutIcon from '@mui/icons-material/Logout'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
-import { useDataProvider, useGetIdentity, useLogout, useRedirect, useTranslate } from 'react-admin'
+import {  useGetIdentity, useLogout, useTranslate } from 'react-admin'
 import { green } from '@mui/material/colors'
 
 // tab panel wrapper
@@ -51,10 +48,10 @@ function a11yProps(index: number) {
 export const Profile = () => {
   const translate = useTranslate()
   const theme: any = useTheme()
-  const redirect = useRedirect()
+  const logout = useLogout();
 
   const handleLogout = async () => {
-    redirect('/login')
+    logout()
   }
 
   const anchorRef: any = useRef(null)

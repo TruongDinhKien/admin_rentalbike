@@ -2,7 +2,9 @@ import { TBike } from '@/types'
 import { Box, Card, Link, Typography, Stack } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { FC } from 'react'
-import Button from '@mui/material/Button';
+import Button from '@mui/material/Button'
+import { dataProvider } from '@/provider'
+import { useGetIdentity, useNotify } from 'react-admin'
 const StyledBikeImg = styled('img')({
   top: 0,
   width: '100%',
@@ -12,11 +14,41 @@ const StyledBikeImg = styled('img')({
 })
 
 export const ShopBikeCard: FC<TBike> = props => {
-  const { id, name, quantity=0, description, imgUrl, price } = props
+  const { id, name, quantity = 0, description, imgUrl, price, onUpdate } = props
+  const notify = useNotify()
+  const { identity } = useGetIdentity()
+
+  const handleBuy = async (status = 'waiting') => {
+    const startTime = new Date()
+    const endTime = new Date(startTime.getTime() + 3 * 60 * 60 * 1000)
+
+    const formattedStartTime = startTime.toISOString()
+    const formattedEndTime = endTime.toISOString()
+    try {
+      const res = await dataProvider('REMOTE', `rentals`, {
+        requestMethod: 'POST',
+        data: {
+          userId: identity?.id,
+          bikeId: id,
+          startTime: formattedStartTime,
+          endTime: formattedEndTime,
+          status,
+        },
+      })
+
+      if (res) {
+        notify(status === 'waiting' ? 'Đặt trước thành công' : 'Thanh toán thành công')
+        onUpdate()
+      }
+    } catch (err) {
+      notify('Xin lỗi, xe này hiện tại đang không còn. Xin vui lòng thử lại sau!')
+      return err
+    }
+  }
 
   return (
     <Card>
-      <Box sx={{ pt: '100%', position: 'relative', fontSize: 10,  }}>
+      <Box sx={{ pt: '100%', position: 'relative', fontSize: 10 }}>
         {id && (
           <Card
             sx={{
@@ -25,9 +57,9 @@ export const ShopBikeCard: FC<TBike> = props => {
               right: 16,
               position: 'absolute',
               textTransform: 'uppercase',
-              backgroundColor:  quantity > 10 ? '#0000FF' : '#FF0000',
+              backgroundColor: quantity > 10 ? '#0000FF' : '#FF0000',
               color: quantity > 10 ? '#fff' : '#000',
-              padding: '4px'
+              padding: '4px',
             }}
           >
             {quantity}
@@ -42,19 +74,23 @@ export const ShopBikeCard: FC<TBike> = props => {
             {name}
           </Typography>
         </Link>
-
+        <Typography
+          component="span"
+          variant="body1"
+          sx={{
+            color: 'text.disabled',
+          }}
+        >
+          {price}
+          &nbsp; VND
+        </Typography>
         <Stack direction="row" alignItems="center" justifyContent="space-between">
-          <Typography
-            component="span"
-            variant="body1"
-            sx={{
-              color: 'text.disabled',
-            }}
-          >
-            {price}
-            &nbsp; VND
-          </Typography>
-          <Button variant="outlined">Rent Now</Button>
+          <Button variant="outlined" onClick={() => handleBuy('renting')}>
+            Thanh toán
+          </Button>
+          <Button variant="outlined" onClick={() => handleBuy()}>
+            Đặt trước
+          </Button>
         </Stack>
       </Stack>
     </Card>
